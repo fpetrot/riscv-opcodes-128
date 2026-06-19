@@ -1,0 +1,6 @@
+# RV128C in addition to RV64C
+
+# c.lq   crdq crs1q cimmq 1..0=0 15..13=1
+# c.sq   crs1q crs2q cimmq 1..0=0 15..13=5
+# c.lqsp crd cimmlqsp 1..0=2 15..13=1
+# c.sqsp crs2 cimmsqsp 1..0=2 15..13=5
