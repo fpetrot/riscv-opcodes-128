@@ -1,0 +1,8 @@
+add.ud     rd rs1 rs2 31..25=4  14..12=1 6..2=0x0E 1..0=3
+sh1add.ud  rd rs1 rs2 31..25=16 14..12=3 6..2=0x0E 1..0=3
+sh2add.ud  rd rs1 rs2 31..25=16 14..12=5 6..2=0x0E 1..0=3
+sh3add.ud  rd rs1 rs2 31..25=16 14..12=7 6..2=0x0E 1..0=3
+sh4add.ud  rd rs1 rs2 31..25=17 14..12=7 6..2=0x0E 1..0=3
+slli.ud    rd rs1 31..26=2 shamtd 14..12=2 6..2=0x06 1..0=3
+
+$pseudo_op rv128_zba::add.ud zext.d rd rs1 31..25=4 24..20=0 14..12=1 6..2=0x0E 1..0=3
