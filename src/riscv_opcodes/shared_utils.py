@@ -231,9 +231,9 @@ def extract_isa_type(ext_name: str) -> str:
 
 # Verify the types for RV*
 def is_rv_variant(type1: str, type2: str) -> bool:
-    """Checks if the types are RV variants (rv32/rv64)."""
-    return (type2 == "rv" and type1 in {"rv32", "rv64"}) or (
-        type1 == "rv" and type2 in {"rv32", "rv64"}
+    """Checks if the types are RV variants (rv32/rv64/rv128)."""
+    return (type2 == "rv" and type1 in {"rv32", "rv64", "rv128"}) or (
+        type1 == "rv" and type2 in {"rv32", "rv64", "rv128"}
     )
 
 

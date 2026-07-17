@@ -135,6 +135,7 @@ class ISAHandlingTest(unittest.TestCase):
         """Test ISA type extraction"""
         self.assertEqual(extract_isa_type("rv32_i"), "rv32")
         self.assertEqual(extract_isa_type("rv64_m"), "rv64")
+        self.assertEqual(extract_isa_type("rv128_im"), "rv128")
         self.assertEqual(extract_isa_type("rv_c"), "rv")
 
     def test_is_rv_variant(self):
@@ -142,12 +143,13 @@ class ISAHandlingTest(unittest.TestCase):
         self.assertTrue(is_rv_variant("rv32", "rv"))
         self.assertTrue(is_rv_variant("rv", "rv64"))
         self.assertFalse(is_rv_variant("rv32", "rv64"))
+        self.assertFalse(is_rv_variant("rv32", "rv128"))
 
     def test_same_base_isa(self):
         """Test base ISA comparison"""
         self.assertTrue(same_base_isa("rv32_i", ["rv32_m", "rv32_a"]))
-        self.assertTrue(same_base_isa("rv_i", ["rv32_i", "rv64_i"]))
-        self.assertFalse(same_base_isa("rv32_i", ["rv64_m"]))
+        self.assertTrue(same_base_isa("rv_i", ["rv32_i", "rv64_i", "rv128_i"]))
+        self.assertFalse(same_base_isa("rv32_i", ["rv64_m", "rv128_m"]))
 
 
 class StringManipulationTest(unittest.TestCase):

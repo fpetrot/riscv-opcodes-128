@@ -1,0 +1,7 @@
+#quadrant 0
+$import rv32_c_d::c.fld
+$import rv32_c_d::c.fsd
+
+#quadrant 2
+$import rv32_c_d::c.fldsp
+$import rv32_c_d::c.fsdsp

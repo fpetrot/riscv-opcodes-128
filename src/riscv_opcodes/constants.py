@@ -5,8 +5,8 @@ from .resources import open_text_resource
 
 # TODO: The constants in this file should be in all caps.
 overlapping_extensions = {
-    "rv_zcmt": {"rv_c_d"},
-    "rv_zcmp": {"rv_c_d"},
+    "rv_zcmt": {"rv32_c_d", "rv128_c"},
+    "rv_zcmp": {"rv32_c_d", "rv128_c"},
     "rv_c": {"rv_zcmop"},
     "rv64_p": {"rv32_p", "rv64_zbp"},
     "rv32_p": {"rv64_p", "rv_zcmt", "rv_c_d"},
@@ -19,6 +19,7 @@ overlapping_instructions = {
     "c_mv": {"c_jr"},
     "c_jalr": {"c_ebreak"},
     "c_add": {"c_ebreak", "c_jalr"},
+    "lq": {"cbo_clean", "cbo_flush", "cbo_inval", "cbo_zero"},
 }
 
 isa_regex = re.compile(
