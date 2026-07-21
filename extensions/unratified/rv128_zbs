@@ -1,0 +1,4 @@
+$pseudo_op rv64_zbs::bclri bclri.rv128 rd rs1 31..27=0x09 shamtq 14..12=1 6..2=0x04 1..0=3
+$pseudo_op rv64_zbs::bexti bexti.rv128 rd rs1 31..27=0x09 shamtq 14..12=5 6..2=0x04 1..0=3
+$pseudo_op rv64_zbs::binvi binvi.rv128 rd rs1 31..27=0x0d shamtq 14..12=1 6..2=0x04 1..0=3
+$pseudo_op rv64_zbs::bseti bseti.rv128 rd rs1 31..27=0x05 shamtq 14..12=1 6..2=0x04 1..0=3
